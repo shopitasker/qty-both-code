@@ -1,0 +1,27 @@
+{% if section.settings.product_show_quantity_selector %}
+  
+    <div class="row expanded quantity-selector">
+      <div class="selector-wrapper">
+        <label for="">Square Feet</label>
+        <div class="select shopify-select">
+          {% assign quantityOptions = '100,200,300,400,500,600,700,800,900,1000' | split:',' %}
+
+		<select id="quantity" name="quantity">
+			{% for q in quantityOptions %}
+  			<option value="{{ q }}">{{ q }}</option>
+			{% endfor %}
+		</select>
+        </div>
+      </div>
+    </div>
+ 
+{% endif % }
+
+
+{% assign quantityOptions = '100,200,300,400,500,600,700,800,900,1000' | split:',' %}
+	<label for="quantity">Quantity: </label>
+		<select id="quantity" name="quantity">
+			{% for q in quantityOptions %}
+  				<option value="{{ q }}">{{ q }}</option>
+			{% endfor %}
+		</select>
